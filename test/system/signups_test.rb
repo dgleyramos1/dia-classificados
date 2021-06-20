@@ -8,7 +8,7 @@ class SignupsTest < ApplicationSystemTestCase
     fill_in "Nome", with: "Dgley ramos"
     fill_in "E-mail", with: "ramos@dev.com"
     fill_in "Senha", with: "minhasenha"
-    fill_in "Confirmação de senha", with: "minhasenha"
+    fill_in "Confirmação de Senha", with: "minhasenha"
 
     clink_on "Cadastrar"
 
