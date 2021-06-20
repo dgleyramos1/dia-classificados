@@ -6,26 +6,13 @@ class LoginsTest < ApplicationSystemTestCase
   end
 
   test "Login com credencias validas" do
-
-    visit root_path
-    click_link "Entrar"
-
-    fill_in "E-mail", with: @user.email
-    fill_in "Semha", with: "password"
-
-    click_buttom "Entrar"
-
+    login_as(@user)
+    
     assert_text "Bem vindo Darth Vader!"
   end
 
   test "Lodin com credenciais invalidas" do
-    visit root_path
-    click_on "Entrar"
-
-    fill_in "E-mail", with: @user.email
-    fill_in "Senha", with: "invasçasjas"
-
-    click_buttom "Entrar"
+    login_as(@user, "invalidpassword")
 
     assert_equal new_session_path, current_path
     assert_text "E-mail ou senha inválidos"
