@@ -1,4 +1,7 @@
 pt-BR:
+  sessions:
+    create:
+      welcome: "bem vindo %{name}!"
   users:
     create:
       success: "Cadastro realizado com sucesso!"
